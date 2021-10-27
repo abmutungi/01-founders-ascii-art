@@ -8,6 +8,10 @@ import (
 )
 
 func main() {
-	sliceOfStr := strings.Split(am.ReadFile(), " ")
-	fmt.Println(sliceOfStr)
+	slice := strings.Split(am.ReadFile(), " ")
+
+	char := 
+
+	
+	fmt.Println(char)
 }
