@@ -29,7 +29,7 @@ func main() {
 		charMap[start] = append(charMap[start], lines[i])
 	}
 
-	for i := 0; i < 8; i++ {
+	for i := 1; i < 9; i++ {
 		for j := range args {
 			fmt.Print(charMap[int(args[j])][i])
 		}
