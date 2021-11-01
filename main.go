@@ -3,16 +3,41 @@ package main
 import (
 	"fmt"
 	"log"
+	"os"
+
+	// "strings"
+
 	"git.learn.01founders.co/abmutungi/ascii-art-test.git/am"
 )
 
 func main() {
+	args := os.Args[1]
+
 	lines, err := am.ReadLines("ascii.txt")
 	if err != nil {
 		log.Fatalf("ReadLines: %s", err)
 	}
-	fmt.Println(lines)
+
+	charMap := make(map[int][]string)
+
+	start := 32
+
+	for i := 0; i < len(lines); i++ {
+		if len(charMap[start]) == 9 {
+			start++
+		}
+		charMap[start] = append(charMap[start], lines[i])
+	}
+
+	for i := 0; i < 8; i++ {
+		for j := range args {
+			fmt.Print(charMap[int(args[j])][i])
+		}
+		fmt.Println()
+		// fmt.Println(strings.Join(charMap[33], "\n"))
+	}
 }
+
 /*
 package main
 
@@ -21,6 +46,7 @@ import (
 )
 
 func main() {
+
 	myMap := make(map[int][]string)
 
 	temp:= []string{"ARNOLD"} //type of this is slice of string
