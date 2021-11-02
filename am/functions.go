@@ -2,25 +2,10 @@ package am
 
 import (
 	"bufio"
-	"fmt"
+	// "fmt"
 	"os"
 )
 
-// func ReadFile() string {
-// 	fileOne, err := os.ReadFile("ascii.txt")
-// 	if err != nil {
-// 		fmt.Println("Invalid input")
-// 	}
-// 	return string(fileOne)
-// }
-
-// func MakeMap() {
-// 	m := make(map[string]int)
-
-// 	start := 32
-// 	line := 1
-
-// }
 func ReadLines(path string) ([]string, error) {
 	file, err := os.Open(path)
 	if err != nil {
@@ -35,21 +20,6 @@ func ReadLines(path string) ([]string, error) {
 	}
 	return lines, scanner.Err()
 }
-
-// func SplitNewLine(s string) string {
-
-// 	var slice []string
-
-// 	for i := 0; i < len(s); i++ {
-
-// 		slice = append(slice, string(s[i]))
-
-// 		if slice[i] == "n" && slice[i-1] == "\\" {
-// 			fmt.Println("hey")
-// 		}
-// 	}
-// 	return strings.Join(slice, "")
-// }
 
 func SplitLines(s string) [][]byte {
 
@@ -76,6 +46,6 @@ func SplitLines(s string) [][]byte {
 			j++
 		}
 	}
-	fmt.Println(splitLines)
+	// fmt.Println(splitLines)
 	return splitLines
 }
