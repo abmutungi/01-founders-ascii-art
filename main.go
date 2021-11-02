@@ -13,6 +13,8 @@ import (
 func main() {
 	args := os.Args[1]
 
+	splitLines := am.SplitLines(args)
+
 	lines, err := am.ReadLines("ascii.txt")
 	if err != nil {
 		log.Fatalf("ReadLines: %s", err)
@@ -29,14 +31,29 @@ func main() {
 		charMap[start] = append(charMap[start], lines[i])
 	}
 
+	for j, val := range splitLines {
 	for i := 1; i < 9; i++ {
-		for j := range args {
-			fmt.Print(charMap[int(args[j])][i])
+			for k := 0; k < len(val); k++ {
+				// if i == 8 && k == len(val)-1 {
+				// 	fmt.Println("hey")
+				// }
+				fmt.Print(charMap[int(splitLines[j][k])][i])
+			}
+
+			// if j == len(splitLines)-1 {
+			// 	fmt.Println()
+			// }
+			fmt.Println()
 		}
-		fmt.Println()
-		// fmt.Println(strings.Join(charMap[33], "\n"))
 	}
 }
+
+// for i := 1; i < 9; i++ {
+// 	for j := range args {
+// 		fmt.Print(charMap[int(args[j])][i])
+// 	}
+// 	fmt.Println()
+// }
 
 /*
 package main
