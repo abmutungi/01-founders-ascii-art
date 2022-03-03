@@ -29,3 +29,7 @@ This project introduced me to:
 
 - The Go file system(fs) API
 - Data manipulation
+
+## Authors:
+
+[Arnold Mutungi](https://github.com/abmutungi) & [Yonas Million](https://git.learn.01founders.co/nsym_coding)
